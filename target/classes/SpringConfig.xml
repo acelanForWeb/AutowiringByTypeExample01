@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 在此並無進行注入行為 -->
+	<bean id="person" class="tw.acelan.common.Person" autowire="byType" />
+	
+	<!-- DI寫法 -->
+	<!--  
+	<bean id="person" class="tw.acelan.common.Person">
+		 <property name="ability" ref="skillBean" />
+	</bean>
+	-->
+	
+	<bean id="skillBean" class="tw.acelan.common.Skill">
+		<property name="skillName" value="寫程式" />
+		<property name="skillLevel" value="S級" />
+	</bean>
+
+</beans>
